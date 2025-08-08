@@ -1,6 +1,8 @@
-import { Controller, Get, HttpCode, Post, Param, Request, Body } from '@nestjs/common';
+import { Controller, Get, HttpCode, Post, Param, Request, Body, UseGuards } from '@nestjs/common';
 import { PostService } from './post.service';
-import { CreatePostDto } from './dto/create-post.dto'
+import { CreatePostDto } from './dto/create-post.dto';
+import { PositiveIntPipe } from '../common/pipes/positive-int.pipe';
+import { ApiKeyAuthGuard } from '../common/authGuards/api-key.guard'
 
 @Controller('post')
 export class PostController {
@@ -12,10 +14,11 @@ export class PostController {
   };
 
   @Get(':id')
-  findOne(@Param('id') id: number): any {
+  findOne(@Param('id', PositiveIntPipe) id: number): any {
     return this.postService.findOne(id);
   }
 
+  @UseGuards(ApiKeyAuthGuard)
   @Post('addPost')
   @HttpCode(201)
   createPost(@Body() dto: CreatePostDto) {
