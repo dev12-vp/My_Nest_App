@@ -1,6 +1,14 @@
 import { CallHandler, ExecutionContext, Injectable, Logger, NestInterceptor } from "@nestjs/common";
 import { Observable, tap } from "rxjs";
 
+/* 
+What is a Logging Interceptor in NestJS?
+  A logging interceptor is a special class in NestJS that “intercepts” incoming requests and outgoing responses, allowing you to:
+
+    🔹Log details like request method, URL, and execution time.
+    🔹Measure performance (how long a request takes).
+    🔹Debug easily without putting console.log() all over your code.
+*/
 
 @Injectable()
 export class LoggingInterceptor implements NestInterceptor {

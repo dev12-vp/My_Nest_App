@@ -1,9 +1,13 @@
 import { Provider } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 
-//Custom Providers & Asynchronous Providers(e.g., DB config)
-/* A custom provider means you define how the provider should be created instead of letting Nest handle it automatically.
-   Async provider is just a provider whose creation requires waiting for something 
+/* 
+Custom Providers & Asynchronous Providers(e.g., DB config)
+
+   🔹A custom provider means you define how the provider should be created
+     instead of letting Nest handle it automatically.       
+   🔹Async provider is just a provider whose creation requires waiting for 
+     something 
 */
 
 // async function fetchDBConfig() {
