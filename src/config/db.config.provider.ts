@@ -10,6 +10,12 @@ Custom Providers & Asynchronous Providers(e.g., DB config)
      something 
 */
 
+/*
+🔹useValue → Directly provide a constant value
+🔹useClass → Provide a class instance (can be swapped)
+🔹useFactory → Provide a value created by a function (sync or async)
+*/
+
 // async function fetchDBConfig() {
 //     return new Promise((resolve) => {
 //         setTimeout(() => {
