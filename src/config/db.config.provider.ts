@@ -40,6 +40,7 @@ Custom Providers & Asynchronous Providers(e.g., DB config)
 //     }
 // }
 
+//.env use
 export const DBConfigProvider: Provider = {
     provide: 'DB_CONFIG',
     useFactory: async (configService: ConfigService) => {
